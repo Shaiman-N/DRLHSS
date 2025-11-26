@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\Detection\common\FeatureExtractor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\Detection\common\PacketReceiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\Detection\common\PreProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\BaseImageSelector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\HostProfiler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\NamespaceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\Orchestrator_FP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\OverlayManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\SandboxRunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\TelemetryCollector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="N:\CPPfiles\DRLHSS\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{083A4200-AB50-3CB8-8607-210F17D05B8A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

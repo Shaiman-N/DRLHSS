@@ -1,0 +1,10 @@
+^N:\CPPFILES\DRLHSS\BUILD\CMAKEFILES\D2BAF74CF2FF39790F5651DC317C24F9\GENERATE.STAMP.RULE
+setlocal
+N:\CMake\bin\cmake.exe -SN:/CPPfiles/DRLHSS -BN:/CPPfiles/DRLHSS/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file N:/CPPfiles/DRLHSS/build/cybersec_platform.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|win32">
+      <Configuration>Debug</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|win32">
+      <Configuration>Release</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DF08CF4F-2282-3133-A85F-B1E34046B5AC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>win32</Platform>
+    <ProjectName>DRLHSS_main</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">N:\CPPfiles\DRLHSS\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">DRLHSS_main.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">DRLHSS_main</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">N:\CPPfiles\DRLHSS\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">DRLHSS_main.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|win32'">DRLHSS_main</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">N:\CPPfiles\DRLHSS\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">DRLHSS_main.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">DRLHSS_main</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">N:\CPPfiles\DRLHSS\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">DRLHSS_main.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">DRLHSS_main</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>pthread.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>N:/CPPfiles/DRLHSS/build/Debug/DRLHSS_main.lib</ImportLibrary>
+      <ProgramDataBaseFile>N:/CPPfiles/DRLHSS/build/Debug/DRLHSS_main.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>pthread.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>N:/CPPfiles/DRLHSS/build/Release/DRLHSS_main.lib</ImportLibrary>
+      <ProgramDataBaseFile>N:/CPPfiles/DRLHSS/build/Release/DRLHSS_main.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>pthread.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>N:/CPPfiles/DRLHSS/build/MinSizeRel/DRLHSS_main.lib</ImportLibrary>
+      <ProgramDataBaseFile>N:/CPPfiles/DRLHSS/build/MinSizeRel/DRLHSS_main.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>N:\CPPfiles\DRLHSS\include;N:\CPPfiles\DRLHSS\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>pthread.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>N:/CPPfiles/DRLHSS/build/RelWithDebInfo/DRLHSS_main.lib</ImportLibrary>
+      <ProgramDataBaseFile>N:/CPPfiles/DRLHSS/build/RelWithDebInfo/DRLHSS_main.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="N:\CPPfiles\DRLHSS\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule N:/CPPfiles/DRLHSS/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
+N:\CMake\bin\cmake.exe -SN:/CPPfiles/DRLHSS -BN:/CPPfiles/DRLHSS/build --check-stamp-file N:/CPPfiles/DRLHSS/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">N:\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;N:\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;N:\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeCXXCompiler.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeRCCompiler.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">N:\CPPfiles\DRLHSS\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule N:/CPPfiles/DRLHSS/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
+N:\CMake\bin\cmake.exe -SN:/CPPfiles/DRLHSS -BN:/CPPfiles/DRLHSS/build --check-stamp-file N:/CPPfiles/DRLHSS/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">N:\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;N:\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;N:\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeCXXCompiler.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeRCCompiler.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">N:\CPPfiles\DRLHSS\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Building Custom Rule N:/CPPfiles/DRLHSS/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">setlocal
+N:\CMake\bin\cmake.exe -SN:/CPPfiles/DRLHSS -BN:/CPPfiles/DRLHSS/build --check-stamp-file N:/CPPfiles/DRLHSS/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">N:\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;N:\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;N:\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeCXXCompiler.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeRCCompiler.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">N:\CPPfiles\DRLHSS\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Building Custom Rule N:/CPPfiles/DRLHSS/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">setlocal
+N:\CMake\bin\cmake.exe -SN:/CPPfiles/DRLHSS -BN:/CPPfiles/DRLHSS/build --check-stamp-file N:/CPPfiles/DRLHSS/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">N:\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;N:\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;N:\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;N:\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;N:\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeCXXCompiler.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeRCCompiler.cmake;N:\CPPfiles\DRLHSS\build\CMakeFiles\4.0.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">N:\CPPfiles\DRLHSS\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\main.cpp" />
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\Orchestrator_FP.cpp" />
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\HostProfiler.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxPos_FP/HostProfiler.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\BaseImageSelector.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxPos_FP/BaseImageSelector.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\OverlayManager.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxPos_FP/OverlayManager.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\NamespaceManager.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxPos_FP/NamespaceManager.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\SandboxRunner.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxPos_FP/SandboxRunner.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\TelemetryCollector.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxPos_FP/TelemetryCollector.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxPos_FP\Cleaner.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxPos_FP/Cleaner.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxNeg_FN\Orchestrator_FN.cpp" />
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxNeg_FN\HostProfiler.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxNeg_FN/HostProfiler.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxNeg_FN\BaseImageSelector.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxNeg_FN/BaseImageSelector.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxNeg_FN\OverlayManager.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxNeg_FN/OverlayManager.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxNeg_FN\NamespaceManager.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxNeg_FN/NamespaceManager.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxNeg_FN\SandboxRunner.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxNeg_FN/SandboxRunner.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxNeg_FN\TelemetryCollector.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxNeg_FN/TelemetryCollector.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="N:\CPPfiles\DRLHSS\src\sandboxNeg_FN\Cleaner.cpp">
+      <ObjectFileName>$(IntDir)/src/sandboxNeg_FN/Cleaner.cpp.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="N:\CPPfiles\DRLHSS\build\ZERO_CHECK.vcxproj">
+      <Project>{9282F1E0-C63E-3005-A246-6CDCD06702F5}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

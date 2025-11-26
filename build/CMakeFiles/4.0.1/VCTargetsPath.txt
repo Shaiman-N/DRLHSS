@@ -1,0 +1,1 @@
+N:/VStools/MSBuild/Microsoft/VC/v170
