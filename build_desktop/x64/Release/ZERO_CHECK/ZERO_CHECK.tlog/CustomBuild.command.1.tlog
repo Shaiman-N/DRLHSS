@@ -1,0 +1,10 @@
+^N:\CPPFILES\DRLHSS\BUILD_DESKTOP\CMAKEFILES\1BB9480DFEAA554FC55F886E0E6AEB14\GENERATE.STAMP.RULE
+setlocal
+N:\CMake\bin\cmake.exe -SN:/CPPfiles/DRLHSS -BN:/CPPfiles/DRLHSS/build_desktop --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file N:/CPPfiles/DRLHSS/build_desktop/DIREWOLF_Desktop.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

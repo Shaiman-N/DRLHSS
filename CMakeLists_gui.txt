@@ -1,0 +1,101 @@
+cmake_minimum_required(VERSION 3.16)
+project(DIREWOLF_GUI VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+# Find Qt6
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick Qml)
+
+# Include directories
+include_directories(
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/include/UI
+)
+
+# Source files
+set(GUI_SOURCES
+    src/gui_main.cpp
+    src/UI/GUIBackend.cpp
+)
+
+# Header files
+set(GUI_HEADERS
+    include/UI/GUIBackend.hpp
+)
+
+# QML resources
+set(QML_RESOURCES
+    qml/qml.qrc
+)
+
+# Create executable
+add_executable(direwolf_gui
+    ${GUI_SOURCES}
+    ${GUI_HEADERS}
+    ${QML_RESOURCES}
+)
+
+# Link Qt libraries
+target_link_libraries(direwolf_gui
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Quick
+    Qt6::Qml
+)
+
+# Set output directory
+set_target_properties(direwolf_gui PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    WIN32_EXECUTABLE TRUE
+)
+
+# Install target
+install(TARGETS direwolf_gui
+    RUNTIME DESTINATION bin
+)
+
+# Platform-specific settings
+if(WIN32)
+    # Windows-specific settings
+    set_target_properties(direwolf_gui PROPERTIES
+        WIN32_EXECUTABLE TRUE
+    )
+    
+    # Deploy Qt dependencies
+    if(Qt6_FOUND)
+        get_target_property(_qmake_executable Qt6::qmake IMPORTED_LOCATION)
+        get_filename_component(_qt_bin_dir "${_qmake_executable}" DIRECTORY)
+        find_program(WINDEPLOYQT_EXECUTABLE windeployqt HINTS "${_qt_bin_dir}")
+        
+        if(WINDEPLOYQT_EXECUTABLE)
+            add_custom_command(TARGET direwolf_gui POST_BUILD
+                COMMAND "${WINDEPLOYQT_EXECUTABLE}"
+                    --qmldir "${CMAKE_SOURCE_DIR}/qml"
+                    "$<TARGET_FILE:direwolf_gui>"
+                COMMENT "Running windeployqt..."
+            )
+        endif()
+    endif()
+elseif(APPLE)
+    # macOS-specific settings
+    set_target_properties(direwolf_gui PROPERTIES
+        MACOSX_BUNDLE TRUE
+        MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/Info.plist
+    )
+elseif(UNIX)
+    # Linux-specific settings
+    install(FILES ${CMAKE_SOURCE_DIR}/direwolf.desktop
+        DESTINATION share/applications
+    )
+endif()
+
+# Print configuration
+message(STATUS "=== DIREWOLF GUI Configuration ===")
+message(STATUS "Qt6 Version: ${Qt6_VERSION}")
+message(STATUS "Build Type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "C++ Standard: ${CMAKE_CXX_STANDARD}")
+message(STATUS "Install Prefix: ${CMAKE_INSTALL_PREFIX}")

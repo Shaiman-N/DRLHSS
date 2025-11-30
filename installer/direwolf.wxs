@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DIREWOLF Security System - WiX Installer -->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" 
+           Name="DIREWOLF Security System" 
+           Language="1033" 
+           Version="1.0.0.0" 
+           Manufacturer="DIREWOLF Security" 
+           UpgradeCode="12345678-1234-1234-1234-123456789012">
+    
+    <Package InstallerVersion="500" 
+             Compressed="yes" 
+             InstallScope="perMachine" 
+             Description="DIREWOLF Security System Installer"
+             Comments="Advanced AI-powered security system with DRL-based threat detection" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Installation directory -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="DIREWOLF">
+          
+          <!-- Bin directory -->
+          <Directory Id="BinFolder" Name="bin">
+            <Component Id="MainExecutable" Guid="*">
+              <File Id="DirewolfExe" 
+                    Source="..\build_desktop\Release\direwolf.exe" 
+                    KeyPath="yes">
+                <Shortcut Id="StartMenuShortcut"
+                          Directory="ProgramMenuDir"
+                          Name="DIREWOLF Security System"
+                          Description="Launch DIREWOLF Security System"
+                          WorkingDirectory="BinFolder"
+                          Icon="DirewolfIcon.exe"
+                          IconIndex="0"
+                          Advertise="yes" />
+                <Shortcut Id="DesktopShortcut"
+                          Directory="DesktopFolder"
+                          Name="DIREWOLF"
+                          Description="DIREWOLF Security System"
+                          WorkingDirectory="BinFolder"
+                          Icon="DirewolfIcon.exe"
+                          IconIndex="0"
+                          Advertise="yes" />
+              </File>
+            </Component>
+          </Directory>
+
+          <!-- Config directory -->
+          <Directory Id="ConfigFolder" Name="config">
+            <Component Id="ConfigDir" Guid="*">
+              <CreateFolder />
+            </Component>
+          </Directory>
+
+          <!-- Logs directory -->
+          <Directory Id="LogsFolder" Name="logs">
+            <Component Id="LogsDir" Guid="*">
+              <CreateFolder />
+            </Component>
+          </Directory>
+
+          <!-- Data directory -->
+          <Directory Id="DataFolder" Name="data">
+            <Component Id="DataDir" Guid="*">
+              <CreateFolder />
+            </Component>
+          </Directory>
+
+          <!-- Models directory -->
+          <Directory Id="ModelsFolder" Name="models">
+            <Component Id="ModelsDir" Guid="*">
+              <CreateFolder />
+            </Component>
+          </Directory>
+
+          <!-- Documentation -->
+          <Component Id="Documentation" Guid="*">
+            <File Id="ReadmeFile" Source="..\DESKTOP_APP_QUICK_START.md" Name="README.txt" />
+            <File Id="LicenseFile" Source="..\LICENSE" Name="LICENSE.txt" />
+          </Component>
+
+        </Directory>
+      </Directory>
+
+      <!-- Start Menu folder -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ProgramMenuDir" Name="DIREWOLF">
+          <Component Id="ProgramMenuDir" Guid="*">
+            <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+            <RegistryValue Root="HKCU" 
+                          Key="Software\DIREWOLF" 
+                          Name="installed" 
+                          Type="integer" 
+                          Value="1" 
+                          KeyPath="yes" />
+            
+            <!-- Additional shortcuts -->
+            <Shortcut Id="SetupAdminShortcut"
+                      Name="Setup Admin Account"
+                      Description="Configure DIREWOLF administrator account"
+                      Target="[BinFolder]direwolf.exe"
+                      Arguments="--setup-admin"
+                      WorkingDirectory="BinFolder" />
+            
+            <Shortcut Id="ReadmeShortcut"
+                      Name="README"
+                      Description="View DIREWOLF documentation"
+                      Target="[INSTALLFOLDER]README.txt" />
+            
+            <Shortcut Id="UninstallShortcut"
+                      Name="Uninstall DIREWOLF"
+                      Description="Uninstall DIREWOLF Security System"
+                      Target="[SystemFolder]msiexec.exe"
+                      Arguments="/x [ProductCode]" />
+          </Component>
+        </Directory>
+      </Directory>
+
+      <!-- Desktop folder -->
+      <Directory Id="DesktopFolder" Name="Desktop" />
+    </Directory>
+
+    <!-- Features -->
+    <Feature Id="ProductFeature" 
+             Title="DIREWOLF Security System" 
+             Level="1"
+             Description="Core DIREWOLF application"
+             ConfigurableDirectory="INSTALLFOLDER">
+      <ComponentRef Id="MainExecutable" />
+      <ComponentRef Id="ConfigDir" />
+      <ComponentRef Id="LogsDir" />
+      <ComponentRef Id="DataDir" />
+      <ComponentRef Id="ModelsDir" />
+      <ComponentRef Id="Documentation" />
+      <ComponentRef Id="ProgramMenuDir" />
+    </Feature>
+
+    <!-- Windows Service Feature -->
+    <Feature Id="ServiceFeature"
+             Title="Windows Service"
+             Level="2"
+             Description="Install DIREWOLF as a Windows service for automatic startup">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+
+    <!-- UI -->
+    <UIRef Id="WixUI_FeatureTree" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+
+    <!-- License agreement -->
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+
+    <!-- Icon -->
+    <Icon Id="DirewolfIcon.exe" SourceFile="..\build_desktop\Release\direwolf.exe" />
+    <Property Id="ARPPRODUCTICON" Value="DirewolfIcon.exe" />
+
+    <!-- Add/Remove Programs properties -->
+    <Property Id="ARPHELPLINK" Value="https://direwolf.ai/support" />
+    <Property Id="ARPURLINFOABOUT" Value="https://direwolf.ai" />
+    <Property Id="ARPNOREPAIR" Value="yes" Secure="yes" />
+    <Property Id="ARPNOMODIFY" Value="yes" Secure="yes" />
+
+    <!-- Custom actions for Windows Service -->
+    <CustomAction Id="InstallService"
+                  Directory="BinFolder"
+                  ExeCommand='sc create DIREWOLF binPath= "[BinFolder]direwolf.exe --service" start= auto DisplayName= "DIREWOLF Security System"'
+                  Execute="deferred"
+                  Impersonate="no"
+                  Return="ignore" />
+
+    <CustomAction Id="StartService"
+                  Directory="BinFolder"
+                  ExeCommand="sc start DIREWOLF"
+                  Execute="deferred"
+                  Impersonate="no"
+                  Return="ignore" />
+
+    <CustomAction Id="StopService"
+                  Directory="BinFolder"
+                  ExeCommand="sc stop DIREWOLF"
+                  Execute="deferred"
+                  Impersonate="no"
+                  Return="ignore" />
+
+    <CustomAction Id="UninstallService"
+                  Directory="BinFolder"
+                  ExeCommand="sc delete DIREWOLF"
+                  Execute="deferred"
+                  Impersonate="no"
+                  Return="ignore" />
+
+    <!-- Installation sequence -->
+    <InstallExecuteSequence>
+      <Custom Action="InstallService" After="InstallFiles">
+        <![CDATA[&ServiceFeature=3 AND NOT REMOVE]]>
+      </Custom>
+      <Custom Action="StartService" After="InstallService">
+        <![CDATA[&ServiceFeature=3 AND NOT REMOVE]]>
+      </Custom>
+      <Custom Action="StopService" Before="UninstallService">
+        <![CDATA[REMOVE="ALL"]]>
+      </Custom>
+      <Custom Action="UninstallService" Before="RemoveFiles">
+        <![CDATA[REMOVE="ALL"]]>
+      </Custom>
+    </InstallExecuteSequence>
+
+  </Product>
+</Wix>

@@ -1,0 +1,16 @@
+# DIREWOLF XAI Voice Processing Requirements
+
+# Core dependencies
+numpy>=1.24.0
+
+# Speech recognition (optional - system will work without it)
+# Uncomment to enable full Whisper integration:
+# openai-whisper>=20230314
+# torch>=2.0.0
+
+# Audio processing (optional)
+# soundfile>=0.12.0
+# librosa>=0.10.0
+
+# For production deployment, install:
+# pip install openai-whisper torch

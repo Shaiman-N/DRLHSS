@@ -1,0 +1,130 @@
+cmake_minimum_required(VERSION 3.20)
+project(DIREWOLF_XAI VERSION 1.0.0 LANGUAGES CXX)
+
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Find Qt6
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets TextToSpeech)
+
+# Enable automoc for Qt
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# XAI Core Library
+set(XAI_CORE_HEADERS
+    include/XAI/Core/XAIApplication.hpp
+    include/XAI/Core/PluginManager.hpp
+    include/XAI/Core/EventBus.hpp
+    include/XAI/Core/ConfigManager.hpp
+    include/XAI/Core/Logger.hpp
+    include/XAI/Voice/VoiceInterface.hpp
+)
+
+set(XAI_CORE_SOURCES
+    src/XAI/Core/XAIApplication.cpp
+    src/XAI/Core/PluginManager.cpp
+    src/XAI/Core/EventBus.cpp
+    src/XAI/Core/ConfigManager.cpp
+    src/XAI/Core/Logger.cpp
+    src/XAI/Voice/VoiceInterface.cpp
+)
+
+add_library(xai_core STATIC
+    ${XAI_CORE_HEADERS}
+    ${XAI_CORE_SOURCES}
+)
+
+target_link_libraries(xai_core
+    PUBLIC
+        Qt6::Core
+        Qt6::Widgets
+        Qt6::TextToSpeech
+)
+
+target_include_directories(xai_core
+    PUBLIC
+        ${CMAKE_SOURCE_DIR}/include
+)
+
+# XAI Main Application
+add_executable(direwolf_xai
+    src/XAI/xai_main.cpp
+)
+
+target_link_libraries(direwolf_xai
+    PRIVATE
+        xai_core
+        Qt6::Core
+        Qt6::Widgets
+)
+
+# XAI Voice Test Application
+add_executable(direwolf_xai_voice
+    src/XAI/xai_voice_test.cpp
+)
+
+target_link_libraries(direwolf_xai_voice
+    PRIVATE
+        xai_core
+        Qt6::Core
+        Qt6::Widgets
+        Qt6::TextToSpeech
+)
+
+# Installation
+install(TARGETS direwolf_xai direwolf_xai_voice xai_core
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+)
+
+install(DIRECTORY include/XAI
+    DESTINATION include
+)
+
+# Testing
+enable_testing()
+
+# Build configuration
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(xai_core PRIVATE DEBUG_BUILD)
+    message(STATUS "Building in Debug mode")
+else()
+    target_compile_definitions(xai_core PRIVATE RELEASE_BUILD)
+    message(STATUS "Building in Release mode")
+endif()
+
+# Platform-specific settings
+if(WIN32)
+    target_compile_definitions(xai_core PRIVATE PLATFORM_WINDOWS)
+    # Enable console on Windows for debugging
+    if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+        set_target_properties(direwolf_xai PROPERTIES
+            WIN32_EXECUTABLE FALSE
+        )
+    endif()
+elseif(APPLE)
+    target_compile_definitions(xai_core PRIVATE PLATFORM_MACOS)
+elseif(UNIX)
+    target_compile_definitions(xai_core PRIVATE PLATFORM_LINUX)
+endif()
+
+# Compiler warnings
+if(MSVC)
+    target_compile_options(xai_core PRIVATE /W4)
+else()
+    target_compile_options(xai_core PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+message(STATUS "DIREWOLF XAI Configuration Complete")
+message(STATUS "  Version: ${PROJECT_VERSION}")
+message(STATUS "  C++ Standard: ${CMAKE_CXX_STANDARD}")
+message(STATUS "  Build Type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "  Qt Version: ${Qt6_VERSION}")
